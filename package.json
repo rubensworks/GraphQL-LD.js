@@ -1,0 +1,85 @@
+{
+  "name": "graphql-ld",
+  "version": "0.0.1",
+  "description": "Linked Data Querying with GraphQL",
+  "keywords": [
+    "graphql",
+    "graphqlld",
+    "sparql",
+    "query",
+    "rdf",
+    "linked data"
+  ],
+  "main": "index.js",
+  "typings": "index",
+  "repository": "git@github.com:rubensworks/graphql-ld.js.git",
+  "author": "Ruben Taelman <rubensworks@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/rubensworks/graphql-ld.js/issues"
+  },
+  "homepage": "https://github.com/rubensworks/graphql-ld.js#readme",
+  "license": "MIT",
+  "bin": {
+    "graphql-ld": "./bin/graphql-ld.js"
+  },
+  "files": [
+    "lib/**/*.d.ts",
+    "lib/**/*.js",
+    "bin/**/*.d.ts",
+    "bin/**/*.js",
+    "index.d.ts",
+    "index.js"
+  ],
+  "pre-commit": [
+    "build",
+    "lint",
+    "test"
+  ],
+  "devDependencies": {
+    "@types/graphql": "^14.0.0",
+    "@types/jest": "^24.0.0",
+    "@types/minimist": "^1.2.0",
+    "coveralls": "^3.0.0",
+    "jest": "^23.4.1",
+    "manual-git-changelog": "^1.0.1",
+    "pre-commit": "^1.2.2",
+    "ts-jest": "^23.10.3",
+    "tslint": "^5.8.0",
+    "tslint-eslint-rules": "^5.3.1",
+    "typescript": "^3.3.1"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "test/tsconfig.json"
+      }
+    },
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "testRegex": "(/test/.*|(\\.|/)(test|spec))\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "collectCoverage": true,
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "test": "jest ${1}",
+    "test-watch": "jest ${1} --watch",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "lint": "tslint index.ts lib/**/*.ts test/**/*.ts --exclude '**/*.d.ts'",
+    "build": "tsc",
+    "validate": "npm ls",
+    "prepare": "npm run build",
+    "version": "manual-git-changelog onversion"
+  },
+  "dependencies": {
+    "@rdfjs/data-model": "^1.1.1",
+    "@types/rdf-js": "^2.0.1"
+  }
+}
