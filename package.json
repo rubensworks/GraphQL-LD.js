@@ -19,9 +19,6 @@
   },
   "homepage": "https://github.com/rubensworks/graphql-ld.js#readme",
   "license": "MIT",
-  "bin": {
-    "graphql-ld": "./bin/graphql-ld.js"
-  },
   "files": [
     "lib/**/*.d.ts",
     "lib/**/*.js",
