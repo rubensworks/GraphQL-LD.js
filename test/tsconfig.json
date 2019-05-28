@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "strictFunctionTypes": false,
+    "lib": [
+      "es6"
+    ]
+  }
+}
