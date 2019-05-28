@@ -79,7 +79,10 @@
     "version": "manual-git-changelog onversion"
   },
   "dependencies": {
-    "@rdfjs/data-model": "^1.1.1",
-    "@types/rdf-js": "^2.0.1"
+    "@types/rdf-js": "^2.0.1",
+    "graphql-to-sparql": "^1.5.0",
+    "jsonld-context-parser": "^1.2.0",
+    "sparqlalgebrajs": "^1.5.2",
+    "sparqljson-to-tree": "^1.3.0"
   }
 }
