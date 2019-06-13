@@ -76,7 +76,7 @@ var Client = require("graphql-ld").Client;
 
 ### With a client-side query engine
 
-_This requires you to install [graphql-ld-sparqlendpoint](https://github.com/rubensworks/graphql-ld-comunica.js): `yarn add graphql-ld-comunica`._
+_This requires you to install [graphql-ld-comunica](https://github.com/rubensworks/graphql-ld-comunica.js): `yarn add graphql-ld-comunica`._
 
 ```javascript
 import {Client} from "graphql-ld";
