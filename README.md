@@ -93,7 +93,7 @@ const context = {
 const comunicaConfig = {
   sources: [
     { type: "sparql", value: "'http://dbpedia.org/sparql'" },
-    { type: "file", value: "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs" },
+    { type: "file", value: "https://ruben.verborgh.org/profile/" },
     { type: "hypermedia", value: "https://fragments.linkedsoftwaredependencies.org/npm" },
   ],
 };
