@@ -77,9 +77,9 @@
   },
   "dependencies": {
     "@types/rdf-js": "^2.0.1",
-    "graphql-to-sparql": "^1.5.0",
+    "graphql-to-sparql": "^2.0.0",
     "jsonld-context-parser": "^1.2.0",
     "sparqlalgebrajs": "^1.5.2",
-    "sparqljson-to-tree": "^1.3.0"
+    "sparqljson-to-tree": "^2.0.0"
   }
 }
