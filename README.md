@@ -78,6 +78,8 @@ var Client = require("graphql-ld").Client;
 
 _This requires you to install [graphql-ld-comunica](https://github.com/rubensworks/graphql-ld-comunica.js): `yarn add graphql-ld-comunica`._
 
+_If you want to use this for Solid apps, have a look at [graphql-ld-comunica-solid](https://github.com/rubensworks/GraphQL-LD-Comunica-Solid.js) instead._
+
 ```javascript
 import {Client} from "graphql-ld";
 import {QueryEngineComunica} from "graphql-ld-comunica";
