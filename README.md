@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/rubensworks/graphql-ld.js.svg?branch=master)](https://travis-ci.org/rubensworks/graphql-ld.js)
 [![Coverage Status](https://coveralls.io/repos/github/rubensworks/graphql-ld.js/badge.svg?branch=master)](https://coveralls.io/github/rubensworks/graphql-ld.js?branch=master)
-[![npm version](https://badge.fury.io/js/graphql-ld.svg)](https://www.npmjs.com/package/graphql-ld) [![Greenkeeper badge](https://badges.greenkeeper.io/rubensworks/graphql-ld.js.svg)](https://greenkeeper.io/)
+[![npm version](https://badge.fury.io/js/graphql-ld.svg)](https://www.npmjs.com/package/graphql-ld)
 
 GraphQL-LD allows _Linked Data_ to be queried via _[GraphQL](https://graphql.org/)_ queries and a _[JSON-LD](https://json-ld.org/) context_.
 
