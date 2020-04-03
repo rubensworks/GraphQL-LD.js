@@ -2,7 +2,7 @@ import {Converter as GraphQlToSparqlConverter} from "graphql-to-sparql";
 import {ISingularizeVariables} from "graphql-to-sparql/lib/IConvertContext";
 import {ExecutionResult} from "graphql/execution/execute";
 import {DocumentNode} from "graphql/language";
-import {ContextParser, IJsonLdContextNormalized, JsonLdContext} from "jsonld-context-parser";
+import {ContextParser, JsonLdContextNormalized, JsonLdContext} from "jsonld-context-parser";
 import * as RDF from "rdf-js";
 import {Algebra} from "sparqlalgebrajs";
 import {Converter as SparqlJsonToTreeConverter} from "sparqljson-to-tree";
@@ -19,13 +19,13 @@ import {IQueryEngine} from "./IQueryEngine";
  */
 export class Client {
 
-  private readonly context: Promise<IJsonLdContextNormalized>;
+  private readonly context: Promise<JsonLdContextNormalized>;
   private readonly queryEngine: IQueryEngine;
   private readonly graphqlToSparqlConverter: GraphQlToSparqlConverter;
   private readonly sparqlJsonToTreeConverter: SparqlJsonToTreeConverter;
 
   constructor(args: IClientArgs) {
-    this.context = (args.contextParser || new ContextParser()).parse(args.context, { baseIri: args.baseIri });
+    this.context = (args.contextParser || new ContextParser()).parse(args.context, { baseIRI: args.baseIRI });
     this.queryEngine = args.queryEngine;
 
     this.graphqlToSparqlConverter = args.graphqlToSparqlConverter ||
@@ -76,7 +76,7 @@ export class Client {
     };
 
     const sparqlAlgebra = await this.graphqlToSparqlConverter
-      .graphqlToSparqlAlgebra(query, await this.context, options);
+      .graphqlToSparqlAlgebra(query, (await this.context).getContextRaw(), options);
     return { sparqlAlgebra, singularizeVariables };
   }
 
@@ -96,7 +96,7 @@ export interface IClientArgs {
   /**
    * An optional base IRI.
    */
-  baseIri?: string;
+  baseIRI?: string;
   /**
    * An optional data factory for RDF quads and terms.
    */

@@ -467,6 +467,11 @@
   dependencies:
     graphql "*"
 
+"@types/isomorphic-fetch@^0.0.35":
+  version "0.0.35"
+  resolved "https://registry.yarnpkg.com/@types/isomorphic-fetch/-/isomorphic-fetch-0.0.35.tgz#c1c0d402daac324582b6186b91f8905340ea3361"
+  integrity sha512-DaZNUvLDCAnCTjgwxgiL1eQdxIKEpNLOlTNtAgnZc50bG2copGhRrFN9/PxPBuJe+tZVLCbQ7ls0xveXVRPkvw==
+
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0", "@types/istanbul-lib-coverage@^2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.1.tgz#42995b446db9a48a11a07ec083499a860e9138ff"
@@ -509,10 +514,22 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.17.13.tgz#ccebcdb990bd6139cd16e84c39dc2fb1023ca90c"
   integrity sha512-pMCcqU2zT4TjqYFrWtYHKal7Sl30Ims6ulZ4UFXxI4xbtQqK/qqKwkDoBFCfooRqqmRu9vY3xaJRwxSh673aYg==
 
-"@types/rdf-js@^2.0.1", "@types/rdf-js@^2.0.10", "@types/rdf-js@^2.0.2":
+"@types/node@^13.1.0":
+  version "13.11.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.11.0.tgz#390ea202539c61c8fa6ba4428b57e05bc36dc47b"
+  integrity sha512-uM4mnmsIIPK/yeO+42F2RQhGUIs39K2RFmugcJANppXe6J1nvH87PvzPZYpza7Xhhs8Yn9yIAVdLZ84z61+0xQ==
+
+"@types/rdf-js@^2.0.1", "@types/rdf-js@^2.0.2":
   version "2.0.10"
   resolved "https://registry.yarnpkg.com/@types/rdf-js/-/rdf-js-2.0.10.tgz#48cbb55044bc9e3e100f7e7261e66994a17836ff"
   integrity sha512-p6jynQltGUe/7Lr7z/Op6GiQ7XE/HKVMqtMs/67DYPCIuADXC0lXjgIKY6Kcv6Sh3HFnGL/UCcgnHGsrYG+xSA==
+  dependencies:
+    "@types/node" "*"
+
+"@types/rdf-js@^2.0.11":
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/@types/rdf-js/-/rdf-js-2.0.11.tgz#b9e398504ceb9f00eaa3b3036b643dc3490cf362"
+  integrity sha512-GC5MZU2HbL5JnlrLAzoxSqLprqtKwocz0TNVugqM04t1ZeeNFpZRqqBQc9Jhev35hEwdH84siRLaCesxHHYlmA==
   dependencies:
     "@types/node" "*"
 
@@ -886,6 +903,11 @@ camelcase@^5.0.0, camelcase@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
+
+canonicalize@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/canonicalize/-/canonicalize-1.0.1.tgz#657b4f3fa38a6ecb97a9e5b7b26d7a19cc6e0da9"
+  integrity sha512-N3cmB3QLhS5TJ5smKFf1w42rJXWe6C1qP01z4dxJiI5v269buii4fLHWETDyf7yEd0azGLNC63VxNMiPd2u0Cg==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -1606,19 +1628,19 @@ graceful-fs@^4.1.2, graceful-fs@^4.2.3:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.3.tgz#4a12ff1b60376ef09862c2093edd908328be8423"
   integrity sha512-a30VEBm4PEdx1dRB7MFK7BejejvCvBronbLjht+sHuGYj8PHs7M/5Z+rt5lw551vZ7yfTCj4Vuyy3mSJytDWRQ==
 
-graphql-to-sparql@^2.0.0:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/graphql-to-sparql/-/graphql-to-sparql-2.0.2.tgz#42e89663d7a8a209407bfbe8d520aebc98a90f81"
-  integrity sha512-kORBrLNzNqV5D6CHfWK2Bc/Z5U5ctWvncV09DMYuq00t3VdVXF1xJF7bvhOB0PPAEsngLsW1yagqV653IANtJw==
+graphql-to-sparql@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/graphql-to-sparql/-/graphql-to-sparql-2.1.0.tgz#0188373e10914a09accd77ceea43f5eeee18be32"
+  integrity sha512-DZ393ciCf4Y9Raoa8uFcuYNplW/osQZFnsnd665A8GtyQYKI97NJoT63wVl2SSnKK2IdxprkBQZVek2Xrz1GqQ==
   dependencies:
     "@rdfjs/data-model" "^1.1.1"
     "@types/rdf-js" "^2.0.1"
-    graphql "^14.0.0"
-    jsonld-context-parser "^1.2.0"
+    graphql "^14.5.8"
+    jsonld-context-parser "^2.0.0"
     minimist "^1.2.0"
     sparqlalgebrajs "^2.0.0"
 
-graphql@*, graphql@^14.0.0:
+graphql@*, graphql@^14.5.8:
   version "14.6.0"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-14.6.0.tgz#57822297111e874ea12f5cd4419616930cd83e49"
   integrity sha512-VKzfvHEKybTKjQVpTFrA5yUq2S9ihcZvfJAtsDBBCuV6wauPu1xl/f9ehgVf0FcEJJs4vz6ysb/ZMkGigQZseg==
@@ -2447,11 +2469,14 @@ json5@2.x, json5@^2.1.0:
   dependencies:
     minimist "^1.2.0"
 
-jsonld-context-parser@^1.2.0:
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/jsonld-context-parser/-/jsonld-context-parser-1.3.4.tgz#289f0b05bd3ec3753535ffdf48de36dba7776521"
-  integrity sha512-mR2uoEWqFLE1PrF1pbUuppKajHSGwodXtI9hlcpKflvolDEFAh4hd7z9874pWaK+TtQfHC3Xqfk0U8SEnt2htw==
+jsonld-context-parser@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/jsonld-context-parser/-/jsonld-context-parser-2.0.0.tgz#2c4ea08d1b137cde7ba2376e26f56d3fcb519779"
+  integrity sha512-dfoLe73CCrqHTM2O6zb5oVoZF2TwDfjZnn6XAlbarvhIR+bQ+6Vkkw+yAXKBmZ7n4Jqdyr14qJHtuc9IP1sTFg==
   dependencies:
+    "@types/isomorphic-fetch" "^0.0.35"
+    "@types/node" "^13.1.0"
+    canonicalize "^1.0.1"
     isomorphic-fetch "^2.2.1"
     relative-to-absolute-iri "^1.0.5"
 
@@ -2760,6 +2785,11 @@ minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
   integrity sha1-o1AIsg9BOD7sH7kU9M1d95omQoQ=
+
+minimist@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
+  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
 mixin-deep@^1.2.0:
   version "1.3.2"
@@ -3597,6 +3627,17 @@ sparqlalgebrajs@^2.0.0:
     "@rdfjs/data-model" "^1.1.2"
     fast-deep-equal "^3.1.1"
     minimist "^1.2.0"
+    rdf-string "^1.3.1"
+    sparqljs "^3.0.1"
+
+sparqlalgebrajs@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/sparqlalgebrajs/-/sparqlalgebrajs-2.2.1.tgz#faff58e5b701d515b6015473f6787bba29ad4ebd"
+  integrity sha512-5HthHAp8Kc/CrdesMvCwE7eMxhWgil+UnEUWlWK1yXsDhNzPQsYR3z0kJcVnfhfzUh61cMkfmBp/yTMNZa81jA==
+  dependencies:
+    "@rdfjs/data-model" "^1.1.2"
+    fast-deep-equal "^3.1.1"
+    minimist "^1.2.5"
     rdf-string "^1.3.1"
     sparqljs "^3.0.1"
 

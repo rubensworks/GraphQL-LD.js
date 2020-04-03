@@ -4,7 +4,8 @@
     "module": "commonjs",
     "lib": [
       "es6",
-      "esnext.asynciterable"
+      "esnext.asynciterable",
+      "dom"
     ],
     "target": "es6",
     "noImplicitAny": true,
