@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.1.0"></a>
+## [v1.1.0](https://github.com/rubensworks/graphql-ld.js/compare/v1.0.1...v1.1.0) - 2020-04-03
+
+### Changed
+* [Update to jsonld-context-parser 2.0.0, which adds JSON-LD 1.1 support](https://github.com/rubensworks/graphql-ld.js/commit/7c753e2db966db602dde879c8d4f44228bb0e84f)
+
 <a name="v1.0.1"></a>
 ## [v1.0.1](https://github.com/rubensworks/graphql-ld.js/compare/v1.0.0...v1.0.1) - 2019-10-16
 

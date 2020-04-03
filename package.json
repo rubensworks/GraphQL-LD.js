@@ -1,6 +1,6 @@
 {
   "name": "graphql-ld",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Linked Data Querying with GraphQL",
   "keywords": [
     "graphql",
