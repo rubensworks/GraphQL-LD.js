@@ -76,7 +76,7 @@
     "version": "manual-git-changelog onversion"
   },
   "dependencies": {
-    "@types/rdf-js": "^2.0.11",
+    "@types/rdf-js": "^3.0.0",
     "graphql-to-sparql": "^2.1.0",
     "jsonld-context-parser": "^2.0.0",
     "sparqlalgebrajs": "^2.2.1",
