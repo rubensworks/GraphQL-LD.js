@@ -1,14 +1,1 @@
-language: node_js
-node_js:
- - "10"
- - "12"
- - "node"
-script:
-  - npm run build
-  - npm run lint
-  - npm test
-after_success:
-  - npm run coveralls
-cache:
-  directories:
-    - node_modules
+import: rubensworks/travis-presets:node.yml@master
