@@ -91,13 +91,9 @@ const context = {
   }
 };
 
-// Create a GraphQL-LD client based on a client-side Comunica engine over 3 sources
+// Create a GraphQL-LD client based on a client-side Comunica engine over 2 sources
 const comunicaConfig = {
-  sources: [
-    { type: "sparql", value: "http://dbpedia.org/sparql" },
-    { type: "file", value: "https://ruben.verborgh.org/profile/" },
-    { type: "hypermedia", value: "https://fragments.linkedsoftwaredependencies.org/npm" },
-  ],
+  sources: [ "http://dbpedia.org/sparql", "https://ruben.verborgh.org/profile/" ],
 };
 const client = new Client({ context, queryEngine: new QueryEngineComunica(comunicaConfig) });
 
