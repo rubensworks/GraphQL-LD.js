@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.2.0"></a>
+## [v1.2.0](https://github.com/rubensworks/graphql-ld.js/compare/v1.1.0...v1.2.0) - 2020-09-21
+
+### Changed
+* [Update to RDF/JS 4](https://github.com/rubensworks/graphql-ld.js/commit/3ea942f882df61c063081f890b8962f345cab2af)
+
 <a name="v1.1.0"></a>
 ## [v1.1.0](https://github.com/rubensworks/graphql-ld.js/compare/v1.0.1...v1.1.0) - 2020-04-03
 
