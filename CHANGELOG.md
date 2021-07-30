@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.3.0"></a>
+## [v1.3.0](https://github.com/rubensworks/graphql-ld.js/compare/v1.2.0...v1.3.0) - 2021-07-30
+
+### Changed
+* [Bump sparqlalgebrajs to 3](https://github.com/rubensworks/graphql-ld.js/commit/cbf440363e9a7223f3b60a17f273a26fca552371)
+
 <a name="v1.2.0"></a>
 ## [v1.2.0](https://github.com/rubensworks/graphql-ld.js/compare/v1.1.0...v1.2.0) - 2020-09-21
 
