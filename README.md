@@ -1,6 +1,6 @@
 # GraphQL-LD
 
-[![Build Status](https://travis-ci.org/rubensworks/graphql-ld.js.svg?branch=master)](https://travis-ci.org/rubensworks/graphql-ld.js)
+[![Build status](https://github.com/rubensworks/graphql-ld.js/workflows/CI/badge.svg)](https://github.com/rubensworks/graphql-ld.js/actions?query=workflow%3ACI)
 [![Coverage Status](https://coveralls.io/repos/github/rubensworks/graphql-ld.js/badge.svg?branch=master)](https://coveralls.io/github/rubensworks/graphql-ld.js?branch=master)
 [![npm version](https://badge.fury.io/js/graphql-ld.svg)](https://www.npmjs.com/package/graphql-ld)
 
