@@ -34,7 +34,7 @@
   ],
   "devDependencies": {
     "@types/graphql": "^14.0.0",
-    "@types/jest": "^26.0.0",
+    "@types/jest": "^27.0.0",
     "@types/minimist": "^1.2.0",
     "@types/rdf-js": "^4.0.0",
     "coveralls": "^3.0.0",
