@@ -3,7 +3,7 @@ import {ISingularizeVariables} from "graphql-to-sparql/lib/IConvertContext";
 import {ExecutionResult} from "graphql/execution/execute";
 import {DocumentNode} from "graphql/language";
 import {ContextParser, JsonLdContextNormalized, JsonLdContext} from "jsonld-context-parser";
-import * as RDF from "rdf-js";
+import * as RDF from "@rdfjs/types";
 import {Algebra} from "sparqlalgebrajs";
 import {Converter as SparqlJsonToTreeConverter} from "sparqljson-to-tree";
 import {IQueryEngine} from "./IQueryEngine";

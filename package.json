@@ -36,7 +36,6 @@
     "@types/graphql": "^14.0.0",
     "@types/jest": "^27.0.0",
     "@types/minimist": "^1.2.0",
-    "@types/rdf-js": "^4.0.0",
     "coveralls": "^3.0.0",
     "jest": "^27.0.0",
     "manual-git-changelog": "^1.0.1",
@@ -77,10 +76,10 @@
     "version": "manual-git-changelog onversion"
   },
   "dependencies": {
-    "@types/rdf-js": "*",
-    "graphql-to-sparql": "^2.3.0",
+    "@rdfjs/types": "*",
+    "graphql-to-sparql": "^2.4.0",
     "jsonld-context-parser": "^2.1.0",
-    "sparqlalgebrajs": "^3.0.1",
+    "sparqlalgebrajs": "^3.0.2",
     "sparqljson-to-tree": "^2.1.0"
   }
 }
