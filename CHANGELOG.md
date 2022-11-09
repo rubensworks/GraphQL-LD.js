@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.4.1"></a>
+## [v1.4.1](https://github.com/rubensworks/graphql-ld.js/compare/v1.3.0...v1.4.1) - 2022-11-09
+
+### Fixed
+* [Include source map files in packed files](https://github.com/rubensworks/graphql-ld.js/commit/4a4123a4d1dd90b4af0d22201b33b6ba19144d7b)
+
 <a name="v1.4.0"></a>
 ## [v1.4.0](https://github.com/rubensworks/graphql-ld.js/compare/v1.3.0...v1.4.0) - 2021-08-13
 
