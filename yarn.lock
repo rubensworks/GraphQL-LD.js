@@ -835,6 +835,13 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-15.14.4.tgz#aaf18436ef67f24676d92b8bbe0f5f41b08db3e8"
   integrity sha512-yblJrsfCxdxYDUa2fM5sP93ZLk5xL3/+3MJei+YtsNbIdY75ePy2AiCfpq+onepzax+8/Yv+OD/fLNleWpCzVg==
 
+"@types/node@^18.0.0":
+  version "18.19.34"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.34.tgz#c3fae2bbbdb94b4a52fe2d229d0dccce02ef3d27"
+  integrity sha512-eXF4pfBNV5DAMKGbI02NnDtWrQ40hAN558/2vvS4gMpMIxaf6JmD7YjnZbq0Q9TDSSkKBamime8ewRoomHdt4g==
+  dependencies:
+    undici-types "~5.26.4"
+
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
@@ -2565,7 +2572,7 @@ json5@2.x, json5@^2.1.2:
   dependencies:
     minimist "^1.2.5"
 
-jsonld-context-parser@^2.0.2, jsonld-context-parser@^2.1.0:
+jsonld-context-parser@^2.0.2:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/jsonld-context-parser/-/jsonld-context-parser-2.1.0.tgz#e1a1c5ed84e51777f8b7cc6bb7d04f5521995fc4"
   integrity sha512-i16aGPG0tz4+fZYvQBzzl+BnC4S+MNjzk9YsaYde/rPV2WPlUAfXOJPIgmdJduQPb7cxDKVEphP0dq2b6ftesQ==
@@ -2574,6 +2581,16 @@ jsonld-context-parser@^2.0.2, jsonld-context-parser@^2.1.0:
     "@types/node" "^13.1.0"
     canonicalize "^1.0.1"
     cross-fetch "^3.0.6"
+    http-link-header "^1.0.2"
+    relative-to-absolute-iri "^1.0.5"
+
+jsonld-context-parser@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/jsonld-context-parser/-/jsonld-context-parser-3.0.0.tgz#43992862fc3eabcee9940cf4c44bb2b0dbe2542c"
+  integrity sha512-Kg6TVtBUdIm057ht/8WNhM9BROt+BeYaDGXbzrKaa3xA99csee+CsD8IMCTizRgzoO8PIzvzcxxCoRvpq1xNQw==
+  dependencies:
+    "@types/http-link-header" "^1.0.1"
+    "@types/node" "^18.0.0"
     http-link-header "^1.0.2"
     relative-to-absolute-iri "^1.0.5"
 
@@ -3915,10 +3932,15 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^4.0.0:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.1.2.tgz#6369ef22516fe5e10304aae5a5c4862db55380e9"
-  integrity sha512-thGloWsGH3SOxv1SoY7QojKi0tc+8FnOmiarEGMbd/lar7QOEd3hvlx3Fp5y6FlDUGl9L+pd4n2e+oToGMmhRQ==
+typescript@^5.0.0:
+  version "5.4.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.4.5.tgz#42ccef2c571fdbd0f6718b1d1f5e6e5ef006f611"
+  integrity sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==
+
+undici-types@~5.26.4:
+  version "5.26.5"
+  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-5.26.5.tgz#bcd539893d00b56e964fd2657a4866b221a65617"
+  integrity sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==
 
 universalify@^0.1.2:
   version "0.1.2"
