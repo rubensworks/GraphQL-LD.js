@@ -14,6 +14,10 @@
   "typings": "index",
   "repository": "git@github.com:rubensworks/graphql-ld.js.git",
   "author": "Ruben Taelman <rubensworks@gmail.com>",
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/rubensworks/"
+  },
   "bugs": {
     "url": "https://github.com/rubensworks/graphql-ld.js/issues"
   },
