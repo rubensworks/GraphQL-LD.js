@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v2.0.0"></a>
+## [v2.0.0](https://github.com/rubensworks/graphql-ld.js/compare/v1.4.1...v2.0.0) - 2025-01-09
+
+### BREAKING CHANGES
+* [Update to rdf-data-factory v2](https://github.com/rubensworks/graphql-ld.js/commit/f20676a7b8eebbed5a539c30ced6f6f9baee1a21)
+    This includes a bump to @rdfjs/types@2.0.0, which requires TypeScript 5 and Node 14+
+
 <a name="v1.4.1"></a>
 ## [v1.4.1](https://github.com/rubensworks/graphql-ld.js/compare/v1.3.0...v1.4.1) - 2022-11-09
 
