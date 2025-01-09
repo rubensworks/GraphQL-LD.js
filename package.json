@@ -83,7 +83,7 @@
   },
   "dependencies": {
     "graphql-to-sparql": "^5.0.0",
-    "jsonld-context-parser": "^2.1.0",
+    "jsonld-context-parser": "^3.0.0",
     "sparqlalgebrajs": "^5.0.0",
     "sparqljson-to-tree": "^3.0.2"
   },
