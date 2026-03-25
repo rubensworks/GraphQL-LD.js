@@ -27,7 +27,7 @@ describe('Client', () => {
     jest.spyOn(queryEngine, 'query');
     client = new Client({ context, queryEngine });
 
-    sparqlAlgebra = new Factory().createProject(null, []);
+    sparqlAlgebra = new Factory().createProject(<any> null, []);
   });
 
   describe('query', () => {

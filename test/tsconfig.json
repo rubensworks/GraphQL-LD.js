@@ -3,6 +3,7 @@
     "module": "commonjs",
     "noImplicitAny": false,
     "strictFunctionTypes": false,
+    "types": ["node", "jest"],
     "lib": [
       "es6"
     ]
