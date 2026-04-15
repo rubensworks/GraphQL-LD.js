@@ -40,15 +40,15 @@
     "test"
   ],
   "devDependencies": {
+    "@rubensworks/eslint-config": "^3.1.0",
     "@types/jest": "^30.0.0",
     "@types/minimist": "^1.2.0",
     "coveralls": "^3.0.0",
+    "eslint": "^8.57.1",
     "jest": "^30.0.0",
     "manual-git-changelog": "^1.0.1",
     "pre-commit": "^1.2.2",
     "ts-jest": "^29.0.0",
-    "tslint": "^6.0.0",
-    "tslint-eslint-rules": "^5.3.1",
     "typescript": "^6.0.0"
   },
   "jest": {
@@ -75,7 +75,7 @@
     "test": "jest ${1}",
     "test-watch": "jest ${1} --watch",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "lint": "tslint index.ts lib/**/*.ts test/**/*.ts --exclude '**/*.d.ts'",
+    "lint": "eslint . --ext .ts --cache",
     "build": "tsc",
     "validate": "npm ls",
     "prepare": "npm run build",
