@@ -9,5 +9,8 @@ module.exports = config([
         project: [ './tsconfig.eslint.json' ],
       },
     },
+    rules: {
+      'ts/prefer-nullish-coalescing': 'off',
+    },
   },
 ]);

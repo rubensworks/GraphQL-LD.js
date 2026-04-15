@@ -1,9 +1,9 @@
-import {parse} from "graphql";
-import {Algebra} from "sparqlalgebrajs";
-import Factory from "sparqlalgebrajs/lib/factory";
-import {Client} from "../lib/Client";
-import {IQueryEngine} from "../lib/IQueryEngine";
-import {QueryEngineMock} from "../mocks/QueryEngineMock";
+import { parse } from 'graphql';
+import type { Algebra } from 'sparqlalgebrajs';
+import Factory from 'sparqlalgebrajs/lib/factory';
+import { Client } from '../lib/Client';
+import type { IQueryEngine } from '../lib/IQueryEngine';
+import { QueryEngineMock } from '../mocks/QueryEngineMock';
 
 describe('Client', () => {
   let client: Client;
@@ -20,9 +20,9 @@ describe('Client', () => {
       },
     };
     queryEngine = new QueryEngineMock([
-      { books_name: { type: 'literal', value: 'Book 1' }, books_author_name: { type: 'literal', value: 'Person 1' } },
-      { books_name: { type: 'literal', value: 'Book 2' }, books_author_name: { type: 'literal', value: 'Person 2' } },
-      { books_name: { type: 'literal', value: 'Book 3' }, books_author_name: { type: 'literal', value: 'Person 3' } },
+      { books_name: { type: 'literal', value: 'Book 1' }, books_author_name: { type: 'literal', value: 'Person 1' }},
+      { books_name: { type: 'literal', value: 'Book 2' }, books_author_name: { type: 'literal', value: 'Person 2' }},
+      { books_name: { type: 'literal', value: 'Book 3' }, books_author_name: { type: 'literal', value: 'Person 3' }},
     ]);
     jest.spyOn(queryEngine, 'query');
     client = new Client({ context, queryEngine });
@@ -31,8 +31,8 @@ describe('Client', () => {
   });
 
   describe('query', () => {
-    it('should query for a string query', async () => {
-      expect(await client.query({ query: `{ books { name author { name } } }` })).toEqual({
+    it('should query for a string query', async() => {
+      await expect(client.query({ query: `{ books { name author { name } } }` })).resolves.toEqual({
         data: [
           {
             books: [
@@ -58,8 +58,8 @@ describe('Client', () => {
       });
     });
 
-    it('should query for a parsed query', async () => {
-      expect(await client.query({ query: parse(`{ books { name author { name } } }`) })).toEqual({
+    it('should query for a parsed query', async() => {
+      await expect(client.query({ query: parse(`{ books { name author { name } } }`) })).resolves.toEqual({
         data: [
           {
             books: [
@@ -85,8 +85,8 @@ describe('Client', () => {
       });
     });
 
-    it('should query for sparql algebra', async () => {
-      expect(await client.query({ sparqlAlgebra, singularizeVariables: {} })).toEqual({
+    it('should query for sparql algebra', async() => {
+      await expect(client.query({ sparqlAlgebra, singularizeVariables: {}})).resolves.toEqual({
         data: [
           {
             books: [
@@ -113,25 +113,30 @@ describe('Client', () => {
       expect(queryEngine.query).toHaveBeenCalledWith(sparqlAlgebra, undefined);
     });
 
-    it('should propagate singularization data for a string query', async () => {
-      expect(await client.query({ query: `query @single(scope: all) { books { name author { name } } }` })).toEqual({
-        data: { books: { author: { name: 'Person 1' }, name: 'Book 1' } },
+    it('should propagate singularization data for a string query', async() => {
+      await expect(client.query({ query: `query @single(scope: all) { books { name author { name } } }` })).resolves.toEqual({
+        data: { books: { author: { name: 'Person 1' }, name: 'Book 1' }},
       });
     });
 
-    it('should propagate singularization data for a parsed query', async () => {
-      expect(await client.query({ query: parse(`query @single(scope: all) { books { name author { name } } }`) }))
-        .toEqual({ data: { books: { author: { name: 'Person 1' }, name: 'Book 1' } } });
+    it('should propagate singularization data for a parsed query', async() => {
+      await expect(client.query({ query: parse(`query @single(scope: all) { books { name author { name } } }`) })).resolves
+        .toEqual({ data: { books: { author: { name: 'Person 1' }, name: 'Book 1' }}});
     });
 
-    it('should propagate singularization data for sparql algebra', async () => {
+    it('should propagate singularization data for sparql algebra', async() => {
       const singularizeVariables = {
-        '': true, 'books': true, 'books_author': true, 'books_author_name': true, 'books_name': true };
-      expect(await client.query({ sparqlAlgebra, singularizeVariables }))
-        .toEqual({ data: { books: { author: { name: 'Person 1' }, name: 'Book 1' } } });
+        '': true,
+        books: true,
+        books_author: true,
+        books_author_name: true,
+        books_name: true,
+      };
+      await expect(client.query({ sparqlAlgebra, singularizeVariables })).resolves
+        .toEqual({ data: { books: { author: { name: 'Person 1' }, name: 'Book 1' }}});
     });
 
-    it('should propagate query engine options', async () => {
+    it('should propagate query engine options', async() => {
       const queryEngineOptions = {};
       const singularizeVariables = {};
       await client.query({ sparqlAlgebra, singularizeVariables, queryEngineOptions });

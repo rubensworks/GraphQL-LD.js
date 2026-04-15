@@ -1,20 +1,20 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "module": "commonjs",
+    "target": "es6",
     "lib": [
       "es6",
       "esnext.asynciterable",
       "dom"
     ],
-    "target": "es6",
+    "module": "commonjs",
     "noImplicitAny": true,
-    "removeComments": false,
-    "preserveConstEnums": true,
-    "sourceMap": true,
-    "inlineSources": true,
     "declaration": true,
-    "importHelpers": false
+    "importHelpers": false,
+    "inlineSources": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "sourceMap": true
   },
   "include": [
     "index.ts",
