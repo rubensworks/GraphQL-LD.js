@@ -1,12 +1,13 @@
-import {Converter as GraphQlToSparqlConverter} from "graphql-to-sparql";
-import {ISingularizeVariables} from "graphql-to-sparql/lib/IConvertContext";
-import {ExecutionResult} from "graphql/execution/execute";
-import {DocumentNode} from "graphql/language";
-import {ContextParser, JsonLdContextNormalized, JsonLdContext} from "jsonld-context-parser";
-import * as RDF from "@rdfjs/types";
-import {Algebra} from "sparqlalgebrajs";
-import {Converter as SparqlJsonToTreeConverter} from "sparqljson-to-tree";
-import {IQueryEngine} from "./IQueryEngine";
+import type * as RDF from '@rdfjs/types';
+import type { ExecutionResult } from 'graphql/execution/execute';
+import type { DocumentNode } from 'graphql/language';
+import { Converter as GraphQlToSparqlConverter } from 'graphql-to-sparql';
+import type { ISingularizeVariables } from 'graphql-to-sparql/lib/IConvertContext';
+import type { JsonLdContextNormalized, JsonLdContext } from 'jsonld-context-parser';
+import { ContextParser } from 'jsonld-context-parser';
+import type { Algebra } from 'sparqlalgebrajs';
+import { Converter as SparqlJsonToTreeConverter } from 'sparqljson-to-tree';
+import type { IQueryEngine } from './IQueryEngine';
 
 /**
  * A GraphQL-LD client.
@@ -18,19 +19,18 @@ import {IQueryEngine} from "./IQueryEngine";
  * ```
  */
 export class Client {
-
   private readonly context: Promise<JsonLdContextNormalized>;
   private readonly queryEngine: IQueryEngine;
   private readonly graphqlToSparqlConverter: GraphQlToSparqlConverter;
   private readonly sparqlJsonToTreeConverter: SparqlJsonToTreeConverter;
 
-  constructor(args: IClientArgs) {
-    this.context = (args.contextParser || new ContextParser()).parse(args.context, { baseIRI: args.baseIRI });
+  public constructor(args: IClientArgs) {
+    this.context = (args.contextParser ?? new ContextParser()).parse(args.context, { baseIRI: args.baseIRI });
     this.queryEngine = args.queryEngine;
 
-    this.graphqlToSparqlConverter = args.graphqlToSparqlConverter ||
+    this.graphqlToSparqlConverter = args.graphqlToSparqlConverter ??
       new GraphQlToSparqlConverter({ dataFactory: args.dataFactory, requireContext: true });
-    this.sparqlJsonToTreeConverter = args.sparqlJsonToTreeConverter ||
+    this.sparqlJsonToTreeConverter = args.sparqlJsonToTreeConverter ??
       new SparqlJsonToTreeConverter({ dataFactory: args.dataFactory, materializeRdfJsTerms: true });
   }
 
@@ -51,35 +51,40 @@ export class Client {
    */
   public async query(args: QueryArgs): Promise<ExecutionResult> {
     // Convert GraphQL to SPARQL
-    const { sparqlAlgebra, singularizeVariables } = 'query' in args
-      ? await this.graphQlToSparql({ query: args.query, variables: args.variables }) : args;
+    const { sparqlAlgebra, singularizeVariables } = 'query' in args ?
+      await this.graphQlToSparql({ query: args.query, variables: args.variables }) :
+      args;
 
     // Execute SPARQL query
     const sparqlJsonResult = await this.queryEngine.query(sparqlAlgebra, args.queryEngineOptions);
 
     // Convert SPARQL response to GraphQL response
-    const data = this.sparqlJsonToTreeConverter.sparqlJsonResultsToTree(sparqlJsonResult, { singularizeVariables });
+    const data = <ExecutionResult['data']> this.sparqlJsonToTreeConverter.sparqlJsonResultsToTree(
+      sparqlJsonResult,
+      { singularizeVariables },
+    );
     return { data };
   }
 
   /**
    * Convert a GraphQL query to SPARQL algebra and a singularize variables object.
-   * @param {string | DocumentNode} query
-   * @param {{[p: string]: any}} variables
+   * @param {IQueryArgsRaw} args
    * @return {Promise<IGraphQlToSparqlResult>}
    */
-  public async graphQlToSparql({ query, variables }: IQueryArgsRaw): Promise<IGraphQlToSparqlResult> {
+  public async graphQlToSparql(args: IQueryArgsRaw): Promise<IGraphQlToSparqlResult> {
+    const { query, variables } = args;
+    void variables;
     const singularizeVariables = {};
     const options = {
       singularizeVariables,
-      variablesDict: {}, // TODO: convert variables values to ValueNode's
+      // TODO: convert variables values to ValueNode's
+      variablesDict: {},
     };
 
     const sparqlAlgebra = await this.graphqlToSparqlConverter
       .graphqlToSparqlAlgebra(query, (await this.context).getContextRaw(), options);
     return { sparqlAlgebra, singularizeVariables };
   }
-
 }
 
 export interface IClientArgs {
@@ -123,12 +128,12 @@ export type QueryArgs = IQueryArgsRaw | IQueryArgsSparql;
 
 export interface IQueryArgsRaw {
   query: string | DocumentNode;
-  variables?: { [key: string]: any };
-  queryEngineOptions?: any;
+  variables?: Record<string, any>;
+  queryEngineOptions?: unknown;
 }
 
 export interface IQueryArgsSparql extends IGraphQlToSparqlResult {
-  queryEngineOptions?: any;
+  queryEngineOptions?: unknown;
 }
 
 export interface IGraphQlToSparqlResult {

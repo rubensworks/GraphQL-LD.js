@@ -1,7 +1,20 @@
 {
   "name": "graphql-ld",
   "version": "2.0.0",
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
   "description": "Linked Data Querying with GraphQL",
+  "typings": "index",
+  "author": "Ruben Taelman <rubensworks@gmail.com>",
+  "license": "MIT",
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/rubensworks/"
+  },
+  "homepage": "https://github.com/rubensworks/graphql-ld.js#readme",
+  "repository": "git@github.com:rubensworks/graphql-ld.js.git",
+  "bugs": {
+    "url": "https://github.com/rubensworks/graphql-ld.js/issues"
+  },
   "keywords": [
     "graphql",
     "graphqlld",
@@ -11,46 +24,22 @@
     "linked data"
   ],
   "main": "index.js",
-  "typings": "index",
-  "repository": "git@github.com:rubensworks/graphql-ld.js.git",
-  "author": "Ruben Taelman <rubensworks@gmail.com>",
-  "funding": {
-    "type": "individual",
-    "url": "https://github.com/sponsors/rubensworks/"
-  },
-  "bugs": {
-    "url": "https://github.com/rubensworks/graphql-ld.js/issues"
-  },
-  "homepage": "https://github.com/rubensworks/graphql-ld.js#readme",
-  "license": "MIT",
   "files": [
-    "lib/**/*.d.ts",
-    "lib/**/*.js",
     "bin/**/*.d.ts",
     "bin/**/*.js",
     "bin/**/*.js.map",
-    "lib/**/*.js.map",
     "index.d.ts",
+    "index.js",
     "index.js.map",
-    "index.js"
+    "lib/**/*.d.ts",
+    "lib/**/*.js",
+    "lib/**/*.js.map"
   ],
   "pre-commit": [
     "build",
     "lint",
     "test"
   ],
-  "devDependencies": {
-    "@types/jest": "^30.0.0",
-    "@types/minimist": "^1.2.0",
-    "coveralls": "^3.0.0",
-    "jest": "^30.0.0",
-    "manual-git-changelog": "^1.0.1",
-    "pre-commit": "^1.2.2",
-    "ts-jest": "^29.0.0",
-    "tslint": "^6.0.0",
-    "tslint-eslint-rules": "^5.3.1",
-    "typescript": "^6.0.0"
-  },
   "jest": {
     "globals": {
       "ts-jest": {
@@ -75,7 +64,7 @@
     "test": "jest ${1}",
     "test-watch": "jest ${1} --watch",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "lint": "tslint index.ts lib/**/*.ts test/**/*.ts --exclude '**/*.d.ts'",
+    "lint": "eslint . --cache",
     "build": "tsc",
     "validate": "npm ls",
     "prepare": "npm run build",
@@ -87,5 +76,16 @@
     "sparqlalgebrajs": "^5.0.0",
     "sparqljson-to-tree": "^3.0.2"
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "devDependencies": {
+    "@rubensworks/eslint-config": "^3.1.0",
+    "@types/jest": "^30.0.0",
+    "@types/minimist": "^1.2.0",
+    "coveralls": "^3.0.0",
+    "eslint": "^8.57.1",
+    "jest": "^30.0.0",
+    "manual-git-changelog": "^1.0.1",
+    "pre-commit": "^1.2.2",
+    "ts-jest": "^29.0.0",
+    "typescript": "^6.0.0"
+  }
 }

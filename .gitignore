@@ -16,3 +16,4 @@ yarn-error.log
 **/index.d.ts
 coverage
 documentation
+.eslintcache
