@@ -1,6 +1,9 @@
 import { parse } from 'graphql';
+import { Converter as GraphQlToSparqlConverter } from 'graphql-to-sparql';
+import { ContextParser } from 'jsonld-context-parser';
 import type { Algebra } from 'sparqlalgebrajs';
 import Factory from 'sparqlalgebrajs/lib/factory';
+import { Converter as SparqlJsonToTreeConverter } from 'sparqljson-to-tree';
 import { Client } from '../lib/Client';
 import type { IQueryEngine } from '../lib/IQueryEngine';
 import { QueryEngineMock } from '../mocks/QueryEngineMock';
@@ -141,6 +144,24 @@ describe('Client', () => {
       const singularizeVariables = {};
       await client.query({ sparqlAlgebra, singularizeVariables, queryEngineOptions });
       expect(queryEngine.query).toHaveBeenCalledWith(sparqlAlgebra, queryEngineOptions);
+    });
+
+    it('should accept a custom contextParser', async() => {
+      const contextParser = new ContextParser();
+      const customClient = new Client({ context: { '@context': { author: 'ex:author', ex: 'http://example.org/' }}, queryEngine, contextParser });
+      await expect(customClient.query({ query: `{ author }` })).resolves.toBeDefined();
+    });
+
+    it('should accept a custom graphqlToSparqlConverter', async() => {
+      const graphqlToSparqlConverter = new GraphQlToSparqlConverter({ requireContext: true });
+      const customClient = new Client({ context: { '@context': { author: 'ex:author', ex: 'http://example.org/' }}, queryEngine, graphqlToSparqlConverter });
+      await expect(customClient.query({ query: `{ author }` })).resolves.toBeDefined();
+    });
+
+    it('should accept a custom sparqlJsonToTreeConverter', async() => {
+      const sparqlJsonToTreeConverter = new SparqlJsonToTreeConverter({ materializeRdfJsTerms: true });
+      const customClient = new Client({ context: { '@context': { author: 'ex:author', ex: 'http://example.org/' }}, queryEngine, sparqlJsonToTreeConverter });
+      await expect(customClient.query({ query: `{ author }` })).resolves.toBeDefined();
     });
   });
 });
