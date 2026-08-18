@@ -1,11 +1,11 @@
 import type * as RDF from '@rdfjs/types';
-import type { ExecutionResult } from 'graphql/execution/execute';
+import type { Algebra } from '@traqula/algebra-transformations-1-2';
+import type { ExecutionResult } from 'graphql/execution';
 import type { DocumentNode } from 'graphql/language';
 import { Converter as GraphQlToSparqlConverter } from 'graphql-to-sparql';
 import type { ISingularizeVariables } from 'graphql-to-sparql/lib/IConvertContext';
 import type { JsonLdContextNormalized, JsonLdContext } from 'jsonld-context-parser';
 import { ContextParser } from 'jsonld-context-parser';
-import type { Algebra } from 'sparqlalgebrajs';
 import { Converter as SparqlJsonToTreeConverter } from 'sparqljson-to-tree';
 import type { IQueryEngine } from './IQueryEngine';
 

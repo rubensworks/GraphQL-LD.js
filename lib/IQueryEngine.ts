@@ -1,4 +1,4 @@
-import type { Algebra } from 'sparqlalgebrajs';
+import type { Algebra } from '@traqula/algebra-transformations-1-2';
 
 /**
  * A query engine that takes SPARQL algebra, and outputs SPARQL JSON.
