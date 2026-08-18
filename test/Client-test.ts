@@ -1,8 +1,8 @@
+import type { Algebra } from '@traqula/algebra-transformations-1-2';
+import { AlgebraFactory } from '@traqula/algebra-transformations-1-2';
 import { parse } from 'graphql';
 import { Converter as GraphQlToSparqlConverter } from 'graphql-to-sparql';
 import { ContextParser } from 'jsonld-context-parser';
-import type { Algebra } from 'sparqlalgebrajs';
-import Factory from 'sparqlalgebrajs/lib/factory';
 import { Converter as SparqlJsonToTreeConverter } from 'sparqljson-to-tree';
 import { Client } from '../lib/Client';
 import type { IQueryEngine } from '../lib/IQueryEngine';
@@ -30,7 +30,7 @@ describe('Client', () => {
     jest.spyOn(queryEngine, 'query');
     client = new Client({ context, queryEngine });
 
-    sparqlAlgebra = new Factory().createProject(<any> null, []);
+    sparqlAlgebra = new AlgebraFactory().createProject(<any> null, []);
   });
 
   describe('query', () => {
